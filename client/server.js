@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.use('/api/v1/portfolio', require('./routes/portfolioRoutes'));
 
-app.get('*', function(req, res) {  // Corrected line
+app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
@@ -26,3 +26,4 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
